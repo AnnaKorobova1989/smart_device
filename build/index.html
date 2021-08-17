@@ -1,13 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" class="page">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="keywords" content="Производство печатных плат, монтаж печатных плат, комплектующие для светотехники">
+  <meta name="description" content="Печатные платы - производство и монтаж, поставка комплектующих, блоков и модулей">
+  <title>Smart device</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/ptmono-regular.woff" as="font">
+  <link rel="preload" href="fonts/ptmono-regular.woff2" as="font">
+  <link rel="preload" href="fonts/roboto-condensed-bold.woff" as="font">
+  <link rel="preload" href="fonts/roboto-condensed-bold.woff2" as="font">
+  <link rel="preload" href="fonts/roboto-condensed-regular.woff" as="font">
+  <link rel="preload" href="fonts/roboto-condensed-regular.woff2" as="font">
 </head>
-<body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+
+<body class="page__body">
+  <header class="header">
+    <div class="container">
+      <div class="header__actions">
+        <a href="#">
+          <svg class="header__logo" width="202" height="52">
+            <use xlink:href="img/sprite.svg#logo"></use>
+          </svg>
+          <svg class="header__logo header__logo--mobile" width="38" height="38">
+            <use xlink:href="img/sprite.svg#logo-mobile"></use>
+          </svg>
+        </a>
+        <ul class="header__contacts">
+          <li class="header__item">
+            <a href="mailto:info@sd.ru">
+              <svg class="header__icon header__icon--email" width="19" height="14">
+                <use xlink:href="img/sprite.svg#icon-envelop"></use>
+              </svg>
+              <span>info@sd.ru</span>
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="tel:+74950005252">
+              <svg class="header__icon header__icon--phone" width="18" height="18">
+                <use xlink:href="img/sprite.svg#icon-phone"></use>
+              </svg>
+              <span>+7 (495) 000 52 52</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="header__buttons-list">
+          <li class="header__button">
+            <a href="#">Заказать звонок</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 </body>
 </html>

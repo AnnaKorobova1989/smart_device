@@ -1,0 +1,16 @@
+.page {
+  height: 100%;
+  font-family: $font-roboto;
+  font-size: 16px;
+  color: $color-text;
+  overflow-x: hidden;
+}
+
+.page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
