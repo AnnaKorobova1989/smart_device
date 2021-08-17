@@ -8,6 +8,7 @@
   background-size: 671px 641px, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: right calc(35% - 218px) top 118px, center;
+  overflow-x: hidden;
 
   a {
     @include link-reset;
