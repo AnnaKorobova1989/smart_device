@@ -1,0 +1,25 @@
+.social-list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}
+
+.social-list__item {
+  margin-right: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .social-list {
+    margin-top: 0;
+  }
+}

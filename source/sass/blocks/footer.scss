@@ -1,0 +1,132 @@
+.footer {
+  font-family: $font-pt;
+  color: $bg-header-color-opacity;
+  background-color: $color-snow;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: normal;
+
+  a {
+    @include link-reset;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.footer__item {
+  h2 {
+    @include visually-hidden;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 40.2% 1fr;
+  gap: 20px 6.1%;
+  padding: 65px 20px 55px;
+  line-height: 25px;
+}
+
+.footer__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__item--social {
+  span {
+    display: none;
+ }
+}
+
+.footer__address {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  font-style: normal;
+}
+
+.footer__button {
+  font-family: $font-pt;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 10px;
+  border: none;
+  color: $bg-header-color;
+  background: none;
+}
+
+@media (max-width: $tablet-width) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    padding: 19px 20px 35px;
+    gap: 57px 4.7%;
+  }
+
+  .footer__item--social {
+    grid-column: 1/-1;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .footer__item--social span {
+    display: inline;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin: 0 9.6% 0 12%;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    padding: 46px 15px 22px;
+    gap: 46px 0;
+  }
+
+  .footer__item--social {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .footer__item--social span {
+    margin: 19px 0 30px 0;
+  }
+
+  .footer__item--contacts p {
+    margin: 26px 15px 0 0;
+  }
+
+  .footer__button {
+    width: 100%;
+    margin: 0 15px 0 0;
+    padding: 5px 0;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      color: $light-blue;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+
+
