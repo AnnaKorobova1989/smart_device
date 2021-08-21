@@ -20,6 +20,11 @@
 }
 
 .footer__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+
   h2 {
     @include visually-hidden;
   }
@@ -33,17 +38,10 @@
   line-height: 25px;
 }
 
-.footer__item {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .footer__item--social {
   span {
     display: none;
- }
+  }
 }
 
 .footer__address {
@@ -127,6 +125,3 @@
     }
   }
 }
-
-
-

@@ -86,7 +86,7 @@
   font-family: $font-pt;
   font-size: 14px;
   writing-mode: vertical-lr;
-  transform: rotate(-180deg);
+  transform: rotate(-180 deg);
   opacity: 0.5;
 
   &:hover {
@@ -115,7 +115,6 @@
 
 @media (max-width: $tablet-width) {
   .intro {
-
     h1 {
       font-size: 60px;
       line-height: 70px;
@@ -182,7 +181,7 @@
     margin: 0;
   }
 
-  .intro__button span{
+  .intro__button span {
     &:first-child {
       display: none;
     }
