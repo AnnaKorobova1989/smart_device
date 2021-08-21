@@ -1,0 +1,279 @@
+.callback-form {
+  max-width: 574px;
+  margin-left: auto;
+  padding: 0 0 33px 4px;
+  color: $color-white;
+
+  h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    margin-bottom: 0;
+
+    @media (max-width: $tablet-width) {
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-top: 13px;
+      font-size: 28px;
+      line-height: 39px;
+    }
+  }
+
+  p {
+    font-family: $font-pt;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 0 0 4px;
+    margin-top: 9px;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 16px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-top: 14px;
+      padding: 0 0 0 1px;
+    }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    padding: 34px 0 0 4px;
+
+    @media (max-width: $tablet-width) {
+      row-gap: 42px;
+      padding: 38px 0 0 4px;
+    }
+
+    @media (max-width: $mobile-width) {
+      row-gap: 32px;
+      padding: 10px 0 0 0;
+    }
+  }
+
+  input {
+    font-family: $font-pt;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 14px 16px;
+    color: $color-white;
+    border: none;
+    border-radius: 0;
+    background-color: $light-blue;
+
+    &::placeholder {
+      color: $white-opacity;
+    }
+
+    &:checked + label::before {
+      background-image: url("../img/icons/icon-check-mark.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:hover {
+      outline: 1px solid $color-white;
+    }
+
+    &:active {
+      outline: 1px solid $color-white;
+    }
+  }
+
+  textarea {
+    font-family: $font-pt;
+    font-size: 16px;
+    grid-column: 1/3;
+    min-height: 127px;
+    padding: 14px 16px;
+    color: $color-white;
+    border: none;
+    background-color: $light-blue;
+    resize: none;
+    border-radius: 0;
+
+    &::placeholder {
+      color: $white-opacity;
+    }
+
+    &:hover {
+      outline: 1px solid $color-white;
+    }
+
+    &:active {
+      outline: 1px solid $color-white;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 100%;
+      min-height: 160px;
+      box-sizing: border-box;
+      padding: 14px 16px 19px 16px;
+    }
+
+    @media (max-width: $mobile-width) {
+      min-height: 105px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    max-width: 590px;
+    margin: 0 auto;
+    padding: 0 0 33px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 10px 0 33px 0;
+  }
+}
+
+.callback-form__button {
+  grid-row: 1;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $color-white;
+  border-radius: 5px;
+  padding: 13px 18px 14px 18px;
+  margin-top: 1px;
+  cursor: pointer;
+  color: $color-white;
+  background-color: transparent;
+
+  &:hover {
+    color: $color-white;
+    background-color: $light-blue;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: -3px;
+  }
+}
+
+.callback-form__input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+
+  @media (max-width: $tablet-width) {
+    column-gap: 32px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.callback-form__input-container--agreement {
+  input {
+    &:hover + label {
+      opacity: 1;
+    }
+
+    &:active + label {
+      opacity: 0.3;
+    }
+
+    &:focus + label {
+      opacity: 1;
+    }
+  }
+
+  label {
+    position: relative;
+    padding: 8px 0 0 40px;
+    font-family: $font-pt;
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      content: "";
+      width: 16px;
+      height: 16px;
+      outline: 1px solid $color-white;
+      outline-offset: -1px;
+
+      @media (max-width: $mobile-width) {
+        top: 2px;
+        left: 2px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      padding: 0 0 0 34px;
+    }
+  }
+}
+
+.callback-form--modal {
+  padding: 6px 0 38px 0;
+
+  h2 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  p {
+    padding: 0 10px 0 0;
+    margin: 13px 0 0 0;
+  }
+
+  form {
+    padding: 34px 0 0 0;
+    row-gap: 31px;
+  }
+
+  input {
+    padding: 14px 23px;
+  }
+
+  textarea {
+    min-height: 76px;
+    padding: 14px 23px;
+  }
+}
+
+.callback-form__input-container--modal {
+  grid-template-columns: 1fr;
+  gap: 30px;
+
+  label {
+    padding: 2px 8px 0 47px;
+
+    &::before {
+      top: 4px;
+      left: -1px;
+    }
+  }
+}
+
+.callback-form .callback-form__input-error {
+  outline: 1px solid $error-color;
+}
+
+.callback-form .callback-form__input-error--label {
+  color: $error-color;
+}
