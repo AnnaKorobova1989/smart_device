@@ -24,24 +24,26 @@
   if (document.querySelectorAll('.callback-form form')) {
     var callbackForms = document.querySelectorAll('.callback-form form');
 
-    callbackForms.forEach(function (form) {
-      var userName = form.querySelector('input[name="name"]');
-      var userPhone = form.querySelector('input[type="tel"]');
-      var userQuestion = form.querySelector('textarea');
+    if ((document.querySelector('input[name="name"]')) && (document.querySelector('input[type="tel"]')) && (document.querySelector('textarea'))) {
+      callbackForms.forEach(function (form) {
+        var userName = form.querySelector('input[name="name"]');
+        var userPhone = form.querySelector('input[type="tel"]');
+        var userQuestion = form.querySelector('textarea');
 
-      form.addEventListener('submit', function () {
-        localStorage.clear();
+        form.addEventListener('submit', function () {
+          localStorage.clear();
 
-        localStorage.setItem('name', userName.value);
-        localStorage.setItem('phone', userPhone.value);
-        localStorage.setItem('questions', userQuestion.value);
+          localStorage.setItem('name', userName.value);
+          localStorage.setItem('phone', userPhone.value);
+          localStorage.setItem('questions', userQuestion.value);
+        });
       });
-    });
+    }
   }
 })();
 
 (function () {
-  if (document.querySelector('.header__button')) {
+  if ((document.querySelector('.header__button')) && (document.querySelector('.page')) && (document.querySelector('.modal')) && (document.querySelector('.modal__close-modal-button')) && (document.querySelector('input[name="name"]'))) {
     var openModalButton = document.querySelector('.header__button');
 
     var disablePage = function () {
