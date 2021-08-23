@@ -20,9 +20,6 @@
   }
 })();
 
-
-'use strict';
-
 (function () {
   if (document.querySelectorAll('.callback-form form')) {
     var callbackForms = document.querySelectorAll('.callback-form form');
@@ -46,7 +43,6 @@
 (function () {
   if (document.querySelector('.header__button')) {
     var openModalButton = document.querySelector('.header__button');
-    console.log(openModalButton);
 
     var disablePage = function () {
       document.querySelector('.page').classList.add('page--disabled');
