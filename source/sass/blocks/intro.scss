@@ -86,7 +86,7 @@
   font-family: $font-pt;
   font-size: 14px;
   writing-mode: vertical-lr;
-  transform: rotate(-180 deg);
+  transform: rotate(180deg);
   opacity: 0.5;
 
   &:hover {

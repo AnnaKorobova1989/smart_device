@@ -1,6 +1,13 @@
 .advantages {
-  background-color: $color-snow;
   padding: 112px calc(50% - 605px) 76px;
+
+  @media (max-width: $tablet-width) {
+    padding: 54px calc(50% - 605px) 28px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 37px calc(50% - 605px) 33px;
+  }
 }
 
 .advantages__list {
@@ -10,6 +17,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   color: $color-main;
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .advantages__item {
@@ -22,72 +34,58 @@
   background-color: $color-white;
 
   h3 {
-    font-family: $font-roboto;
     font-size: 24px;
+    font-weight: 400;
     line-height: 34px;
-    font-style: normal;
-    font-weight: normal;
+    margin: 14px 0;
+
+    @media (max-width: $tablet-width) {
+      margin: 2px 0 9px;
+    }
+
+    @media (max-width: $mobile-width) {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 9px 0 8px;
+    }
   }
 
   p {
     font-family: $font-pt;
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     color: $color-text;
+
+    @media (max-width: $tablet-width) {
+      margin: 5px 0;
+    }
+  }
+
+  &:nth-child(3n+1) {
+    @media (max-width: $mobile-width) {
+      padding: 24px 21px 19px 26px;
+    }
   }
 
   &:hover {
-    background-color: $color-main;
-    color: $color-white;
     cursor: pointer;
+    color: $color-white;
+    background-color: $color-main;
   }
 
   &:hover p {
     color: $color-white;
   }
-}
 
-@media (max-width: $tablet-width) {
-  .advantages {
-    padding: 54px calc(50% - 605px) 28px;
-  }
-
-  .advantages__list {
-    gap: 20px;
-  }
-
-  .advantages__item {
+  @media (max-width: $tablet-width) {
     padding: 24px 19px 16px 28px;
     min-height: 232px;
     box-shadow: inset 2px 0 0 $color-main;
-
-    h3 {
-      margin: 2px 0 9px;
-    }
-
-    p {
-      margin: 5px 0;
-    }
-  }
-}
-
-@media (max-width: $mobile-width) {
-  .advantages {
-    padding: 37px calc(50% - 605px) 33px;
   }
 
-  .advantages__list {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .advantages__item {
+  @media (max-width: $mobile-width) {
     padding: 24px 15px 19px 26px;
-
-    h3 {
-      font-size: 20px;
-      line-height: 28px;
-      margin: 9px 0 8px;
-    }
   }
 }

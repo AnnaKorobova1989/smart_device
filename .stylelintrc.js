@@ -7,7 +7,7 @@ module.exports = {
         "composes"
       ]
     }],
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "fr", "dppx", "vh"],
+    "unit-whitelist": ["em", "rem", "s", "px", "%", "fr", "dppx", "vh", "deg"],
     "indentation": 2,
   }
 }
