@@ -48,7 +48,7 @@
         </ul>
         <ul class="header__buttons-list">
           <li class="header__button">
-            <button type="button" href="#">Заказать звонок</button>
+            <button class="header__button--item" type="button">Заказать звонок</button>
           </li>
         </ul>
       </div>
@@ -60,7 +60,7 @@
             <span>Получить бесплатную консультацию</span>
             <span>Бесплатная консультация</span>
           </a>
-          <a class="intro__scroll" href="#">Скролл вниз</a>
+          <a class="intro__scroll" href="#advantages">Скролл вниз</a>
         </div>
         <div class="intro__image">
           <picture>
@@ -181,20 +181,18 @@
             <a href="">
               <p>Комплектующие для светотехники</p>
               <picture>
-                <picture>
-                  <source type="image/webp" media="(max-width: 767px)"
-                    srcset="img/products/components-mobile.webp 1x, img/products/components-mobile@2x.webp 2x">
-                  <source media="(max-width: 767px)"
-                    srcset="img/products/components-mobile.png 1x, img/products/components-mobile@2x.png 2x">
-                  <source type="image/webp" media="(max-width: 1023px)"
-                    srcset="img/products/components-tablet.webp 1x, img/products/components-tablet@2x.webp 2x">
-                  <source media="(max-width: 1023px)"
-                    srcset="img/products/components-tablet.png 1x, img/products/components-tablet@2x.png 2x">
-                  <source type="image/webp" srcset="img/products/components.webp 1x, img/products/components@2x.webp 2x">
-                  <!-- 1x: 370px, 2x: 740px -->
-                  <img src="img/products/components.png" srcset="img/products/components@2x.png 2x" width="370"
-                    height="620" alt="Комплектующие для светотехники" loading="lazy">
-                </picture>
+                <source type="image/webp" media="(max-width: 767px)"
+                  srcset="img/products/components-mobile.webp 1x, img/products/components-mobile@2x.webp 2x">
+                <source media="(max-width: 767px)"
+                  srcset="img/products/components-mobile.png 1x, img/products/components-mobile@2x.png 2x">
+                <source type="image/webp" media="(max-width: 1023px)"
+                  srcset="img/products/components-tablet.webp 1x, img/products/components-tablet@2x.webp 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/products/components-tablet.png 1x, img/products/components-tablet@2x.png 2x">
+                <source type="image/webp" srcset="img/products/components.webp 1x, img/products/components@2x.webp 2x">
+                <!-- 1x: 370px, 2x: 740px -->
+                <img src="img/products/components.png" srcset="img/products/components@2x.png 2x" width="370"
+                  height="620" alt="Комплектующие для светотехники" loading="lazy">
               </picture>
             </a>
           </li>
@@ -308,7 +306,7 @@
       </div>
     </section>
   </footer>
-  <div class="modal modal--open modal--page">
+  <div class="modal modal--page">
     <div class="container">
       <div class="modal__logo">
         <a href="index.html">
@@ -319,9 +317,9 @@
       </div>
       <div class="container">
         <div class="modal__content">
-          <a class="modal__close-modal-button" href="index.html">
+          <button class="modal__close-modal-button">
             <span class="visually-hidden">Закрыть модальное окно</span>
-          </a>
+          </button>
           <div class="callback-form callback-form--modal">
             <h1>Закажите звонок</h1>
             <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
@@ -348,5 +346,6 @@
       </div>
     </div>
   </div>
+  <script src="js/main.js"></script>
 </body>
 </html>
