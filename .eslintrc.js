@@ -4,7 +4,6 @@ module.exports = {
     "sourceType": "module"
   },
   "env": {
-    "es2017": true,
     "browser": true
   },
   "extends": "eslint-config-htmlacademy",
