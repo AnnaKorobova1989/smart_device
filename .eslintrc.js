@@ -1,13 +1,32 @@
 module.exports = {
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
   "env": {
     "browser": true
   },
-  "extends": "eslint-config-htmlacademy",
+  "extends": "htmlacademy/es5",
   "rules": {
-    // Additional rules...
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "strict": [
+      "off",
+      "global"
+    ],
+    "no-console": "warn",
+    "no-alert": "warn"
   }
 }

@@ -24,7 +24,9 @@
   if (document.querySelectorAll('.callback-form form')) {
     var callbackForms = document.querySelectorAll('.callback-form form');
 
-    if ((document.querySelector('input[name="name"]')) && (document.querySelector('input[type="tel"]')) && (document.querySelector('textarea'))) {
+    if ((document.querySelector('input[name="name"]')) &&
+     (document.querySelector('input[type="tel"]')) &&
+      (document.querySelector('textarea'))) {
       callbackForms.forEach(function (form) {
         var userName = form.querySelector('input[name="name"]');
         var userPhone = form.querySelector('input[type="tel"]');
@@ -43,16 +45,20 @@
 })();
 
 (function () {
-  if ((document.querySelector('.header__button')) && (document.querySelector('.page')) && (document.querySelector('.modal')) && (document.querySelector('.modal__close-modal-button')) && (document.querySelector('input[name="name"]'))) {
+  if ((document.querySelector('.header__button'))) {
     var openModalButton = document.querySelector('.header__button');
+    if (document.querySelector('.page')) {
+      var disablePage = function () {
+        document.querySelector('.page').classList.add('page--disabled');
+      };
+    }
 
-    var disablePage = function () {
-      document.querySelector('.page').classList.add('page--disabled');
-    };
+    if (document.querySelector('.page')) {
+      var enablePage = function () {
+        document.querySelector('.page').classList.remove('page--disabled');
+      };
+    }
 
-    var enablePage = function () {
-      document.querySelector('.page').classList.remove('page--disabled');
-    };
 
     var closeModal = function (modal, buttonClose) {
       modal.classList.remove('modal--open');
@@ -63,12 +69,12 @@
 
     var closeModalKeyPressHandler = function (evt) {
       var isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
-
       if (isEscKey && document.querySelector('.modal--open')) {
         document.querySelector('.modal--open').classList.remove('modal--open');
         enablePage();
       }
     };
+
 
     var closeModalOutsideClickHandler = function (evt) {
       if (evt.target.classList.contains('modal')) {
@@ -79,7 +85,6 @@
 
     var closeModalClickHandler = function (evt) {
       evt.preventDefault();
-
       var modal = evt.target.closest('.modal--open');
       var buttonClose = evt.target;
       closeModal(modal, buttonClose);
@@ -87,46 +92,59 @@
     };
 
     var trapFocus = function (element) {
-      var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-      var firstFocusableEl = focusableEls[0];
-      var lastFocusableEl = focusableEls[focusableEls.length - 1];
-      var KEYCODE_TAB = 9;
-
-      element.addEventListener('keydown', function (evt) {
-        var isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
-
-        if (!isTabPressed) {
-          return;
-        }
-
-        if (evt.shiftKey) {
-          if (document.activeElement === firstFocusableEl) {
-            lastFocusableEl.focus();
-            evt.preventDefault();
+      if (document.querySelectorAll('a[href]:not([disabled]),' +
+      'button:not([disabled]),' +
+      'textarea:not([disabled]),' +
+      'input[type="text"]:not([disabled]),' +
+      'input[type="radio"]:not([disabled]),' +
+      'input[type="checkbox"]:not([disabled]),' +
+      'select:not([disabled])')) {
+        var focusableEls = element.querySelectorAll('a[href]:not([disabled]),' +
+        'button:not([disabled]),' +
+        'textarea:not([disabled]),' +
+        'input[type="text"]:not([disabled]),' +
+        'input[type="radio"]:not([disabled]),' +
+        'input[type="checkbox"]:not([disabled]),' +
+        'select:not([disabled])');
+        var firstFocusableEl = focusableEls[0];
+        var lastFocusableEl = focusableEls[focusableEls.length - 1];
+        var KEYCODE_TAB = 9;
+        element.addEventListener('keydown', function (evt) {
+          var isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
+          if (!isTabPressed) {
+            return;
           }
-        } else {
-          if (document.activeElement === lastFocusableEl) {
-            firstFocusableEl.focus();
-            evt.preventDefault();
+          if (evt.shiftKey) {
+            if (document.activeElement === firstFocusableEl) {
+              lastFocusableEl.focus();
+              evt.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableEl) {
+              firstFocusableEl.focus();
+              evt.preventDefault();
+            }
           }
-        }
-      });
+        });
+      }
     };
 
     var openModalClickHandler = function (evt) {
-      evt.preventDefault();
-
-      var modal = document.querySelector('.modal');
-      modal.classList.add('modal--open');
-      disablePage();
-      var userNameField = modal.querySelector('input[name="name"]');
-      var modalCloseButton = modal.querySelector('.modal__close-modal-button');
-
-      userNameField.focus();
-      modalCloseButton.addEventListener('click', closeModalClickHandler);
-      document.addEventListener('keydown', closeModalKeyPressHandler);
-      document.addEventListener('click', closeModalOutsideClickHandler);
-      trapFocus(modal);
+      if (document.querySelector('.modal')) {
+        evt.preventDefault();
+        var modal = document.querySelector('.modal');
+        modal.classList.add('modal--open');
+        disablePage();
+        if (modal.querySelector('input[name="name"]') && (modal.querySelector('.modal__close-modal-button'))) {
+          var userNameField = modal.querySelector('input[name="name"]');
+          var modalCloseButton = modal.querySelector('.modal__close-modal-button');
+          userNameField.focus();
+          modalCloseButton.addEventListener('click', closeModalClickHandler);
+          document.addEventListener('keydown', closeModalKeyPressHandler);
+          document.addEventListener('click', closeModalOutsideClickHandler);
+          trapFocus(modal);
+        }
+      }
     };
 
     openModalButton.addEventListener('click', openModalClickHandler);
