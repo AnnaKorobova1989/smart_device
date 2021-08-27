@@ -25,7 +25,7 @@
     var callbackForms = document.querySelectorAll('.callback-form form');
 
     if ((document.querySelector('input[name="name"]')) &&
-     (document.querySelector('input[type="tel"]')) &&
+      (document.querySelector('input[type="tel"]')) &&
       (document.querySelector('textarea'))) {
       callbackForms.forEach(function (form) {
         var userName = form.querySelector('input[name="name"]');
@@ -151,8 +151,6 @@
   }
 })();
 
-'use strict';
-
 (function () {
   if (document.querySelector('.accordion')) {
     var mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -176,7 +174,7 @@
         var isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
 
         if (isEscKey) {
-          evt.target.closest('.accordion__item').classList.remove('accordion__item--open');
+          evt.target.closest('.accordion__item').classList.toggle('accordion__item--open');
           evt.target.removeEventListener('keydown', closeAccordionKeyPressHandler);
         }
       };
@@ -248,7 +246,7 @@
     };
 
     phoneFields.forEach(function (field) {
-      var mask = IMask(field, phoneFieldMask);
+      var mask = new window.IMask(field, phoneFieldMask);
       mask.value = field.value;
 
       field.addEventListener('focus', function () {

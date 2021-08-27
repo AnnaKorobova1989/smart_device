@@ -46,7 +46,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding: 0 0 83px 0;
+    padding: 0 0 72px 0;
   }
 
   @media (max-width: $mobile-width) {
@@ -60,6 +60,10 @@
   background-image: url("../img/backgrounds/bg-year.png");
   background-repeat: no-repeat;
   background-position: left 9.77% top 3px;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 26%;
+  }
 
   p {
     max-width: 1000px;
@@ -75,10 +79,9 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding: 0 0 0 26.2%;
     background-position: left 4px top -2px;
     background-size: 132px 361px;
-    max-width: 100%;
+    padding-right: 0;
   }
 
   @media (max-width: $mobile-width) {

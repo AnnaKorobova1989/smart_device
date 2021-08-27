@@ -130,11 +130,13 @@
   .header__icon--email {
     width: 26px;
     height: 18px;
+    margin-top: -10px;
   }
 
   .header__icon--phone {
     width: 24px;
     height: 24px;
+    margin-top: -10px;
   }
 
   .header__item span {
@@ -148,7 +150,7 @@
 
 @media (max-width: $mobile-width) {
   .header {
-    padding: 17px 0 70px;
+    padding: 15px 0 70px;
     background-size: 530px 483px, cover;
     background-repeat: no-repeat, no-repeat;
     background-position: right calc(35% - 276px) top -46px, top -6px center;
@@ -168,5 +170,9 @@
 
   .header__item {
     margin: 0 22px 10px 0;
+  }
+
+  .header__icon--email {
+    margin-top: -7px;
   }
 }
