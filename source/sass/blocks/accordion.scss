@@ -1,0 +1,62 @@
+.accordion__item {
+  position: relative;
+
+  &::before {
+    @media (max-width: $mobile-width) {
+      position: absolute;
+      top: -25px;
+      left: -15px;
+      content: "";
+      width: 100vw;
+      height: 1px;
+      background-color: $light-grey-opacity;
+    }
+  }
+}
+
+.accordion__item .accordion__body {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.accordion__item--open .accordion__body {
+  @media (max-width: $mobile-width) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.accordion__trigger {
+  position: relative;
+
+  &::after {
+    @media (max-width: $mobile-width) {
+      position: absolute;
+      right: 0;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url("../img/icons/icon-plus.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.accordion__item--open .accordion__trigger {
+  &::after {
+    @media (max-width: $mobile-width) {
+      background-image: url("../img/icons/icon-minus.svg");
+    }
+  }
+}
+
+.accordion__trigger--no-js {
+  &::after {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+}

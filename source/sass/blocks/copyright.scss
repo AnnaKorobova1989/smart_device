@@ -2,7 +2,7 @@
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  border-top: 1px solid $bg-header-color-opacity;
+  border-top: 1px solid $light-grey-opacity;
 
   h2 {
     @include visually-hidden;

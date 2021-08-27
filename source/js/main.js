@@ -150,3 +150,111 @@
     openModalButton.addEventListener('click', openModalClickHandler);
   }
 })();
+
+'use strict';
+
+(function () {
+  if (document.querySelector('.accordion')) {
+    var mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    if (mediaQuery.matches) {
+      var accordionContent = document.querySelector('.accordion');
+      var accordionItems = Array.from(accordionContent.querySelectorAll('.accordion__item'));
+      var accordionTriggers = Array.from(accordionContent.querySelectorAll('.accordion__trigger'));
+
+      var closeAllAccordion = function (element) {
+        var currentElement = element || null;
+
+        accordionItems.forEach(function (it) {
+          if (it.classList.contains('accordion__item--open') && currentElement !== it) {
+            it.classList.remove('accordion__item--open');
+          }
+        });
+      };
+
+      var closeAccordionKeyPressHandler = function (evt) {
+        var isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
+
+        if (isEscKey) {
+          evt.target.closest('.accordion__item').classList.remove('accordion__item--open');
+          evt.target.removeEventListener('keydown', closeAccordionKeyPressHandler);
+        }
+      };
+
+      var toggleAccordionClickHandler = function (evt) {
+        evt.preventDefault();
+
+        closeAllAccordion(evt.target.closest('.accordion__item'));
+        evt.target.closest('.accordion__item').classList.toggle('accordion__item--open');
+        evt.target.addEventListener('keydown', closeAccordionKeyPressHandler);
+      };
+
+      accordionTriggers.forEach(function (it) {
+        it.classList.remove('accordion__trigger--no-js');
+        it.tabIndex = '0';
+        it.addEventListener('click', toggleAccordionClickHandler);
+      });
+
+      closeAllAccordion();
+
+    }
+  }
+})();
+
+(function () {
+  if (document.querySelector('.callback-form')) {
+    var formsList = document.querySelectorAll('.callback-form');
+
+    formsList.forEach(function (form) {
+      var inputsList = form.querySelectorAll('input');
+      var submitButton = form.querySelector('.callback-form__button');
+
+      var validity = function (evt) {
+        inputsList.forEach(function (input) {
+          if (!input.validity.valid) {
+            evt.preventDefault();
+
+            input.classList.add('callback-form__input-error');
+            findRelatedLable(form, input);
+          } else {
+            input.classList.remove('callback-form__input-error');
+            findRelatedLable(form, input);
+          }
+        });
+      };
+
+      submitButton.addEventListener('click', validity);
+    });
+
+    var findRelatedLable = function (form, input) {
+      var labelsList = form.querySelectorAll('label');
+
+      labelsList.forEach(function (label) {
+        if (label.htmlFor === input.id && !input.validity.valid) {
+          label.classList.add('callback-form__input-error--label');
+        } else {
+          label.classList.remove('callback-form__input-error--label');
+        }
+      });
+    };
+  }
+})();
+
+(function () {
+  if (document.querySelector('input[type="tel"]')) {
+    var phoneFields = document.querySelectorAll('input[type="tel"]');
+    var phoneFieldMask = {
+      mask: '+7(000)000-00-00'
+    };
+
+    phoneFields.forEach(function (field) {
+      var mask = IMask(field, phoneFieldMask);
+      mask.value = field.value;
+
+      field.addEventListener('focus', function () {
+        field.value = '+7(';
+        mask.updateValue();
+      });
+    });
+  }
+})();
