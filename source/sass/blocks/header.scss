@@ -34,11 +34,11 @@
     flex-wrap: wrap;
     align-items: center;
 
-    &:hover {
+    &:hover(:not(:first-child)) {
       color: $color-main;
     }
 
-    &:active {
+    &:active(:not(:first-child)) {
       opacity: 0.5;
     }
   }
@@ -165,7 +165,7 @@
   }
 
   .header__actions {
-    margin-bottom: 230px;
+    margin-bottom: 109px;
   }
 
   .header__item {
@@ -174,5 +174,11 @@
 
   .header__icon--email {
     margin-top: -7px;
+  }
+}
+
+@media (max-width: 580px) {
+  .header__actions {
+    margin-bottom: 230px;
   }
 }

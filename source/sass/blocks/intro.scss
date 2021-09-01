@@ -151,6 +151,8 @@
 
 @media (max-width: $mobile-width) {
   .intro {
+    margin-bottom: 121px;
+
     h1 {
       font-size: 40px;
       line-height: 47px;
@@ -162,6 +164,7 @@
       line-height: 25px;
       padding: 0 0 0 49px;
       margin-bottom: 41px;
+      max-width: 350px;
     }
   }
 
@@ -172,7 +175,7 @@
 
   .intro__image {
     width: 294px;
-    top: -193px;
+    top: -56px;
     right: -14px;
   }
 
@@ -189,5 +192,15 @@
     &:last-child {
       display: inline;
     }
+  }
+}
+
+@media (max-width: 580px) {
+  .intro {
+    margin-bottom: 0;
+  }
+
+  .intro__image {
+    top: -195px;
   }
 }

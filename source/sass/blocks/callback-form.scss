@@ -125,6 +125,10 @@
     }
   }
 
+  input[id="agreed"]:focus-within + label::before {
+    outline: 2px solid #000000;
+  }
+
   @media (max-width: $tablet-width) {
     max-width: 590px;
     margin: 0 auto;

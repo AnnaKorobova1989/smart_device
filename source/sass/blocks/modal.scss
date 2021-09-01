@@ -7,6 +7,10 @@
   width: 100%;
   height: 100%;
   background-color: $black-opacity;
+
+  input[id="modal-agreed"]:focus-within + label::before {
+    outline: 2px solid #000000;
+  }
 }
 
 .modal__content {
